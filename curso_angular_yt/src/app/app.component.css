@@ -1,0 +1,4 @@
+.container {
+  min-height: 65vh;/*define altura da view do app !!! */
+  margin-top: 1em;
+}
