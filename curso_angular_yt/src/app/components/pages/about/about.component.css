@@ -6,10 +6,11 @@
   padding: 2em;
 }
 
-h2 , p {
+h2,
+p {
   margin-bottom: 1em;
 }
 
-.about a{
+.about a {
   text-decoration: underline;
 }

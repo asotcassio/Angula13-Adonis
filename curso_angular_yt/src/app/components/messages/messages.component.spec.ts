@@ -11,7 +11,9 @@ describe('MessagesComponent', () => {
       declarations: [ MessagesComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(MessagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

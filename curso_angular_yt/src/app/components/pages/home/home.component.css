@@ -4,17 +4,19 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .home-container h1 {
   margin-bottom: 0.5em;
 }
 
-.moments-container{
+.moments-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 80%;
   margin: 0 auto;
   justify-content: space-between;
 }
+
 .moment {
   width: 32%;
   margin-bottom: 1em;
@@ -26,7 +28,8 @@
   margin-bottom: 1em;
 }
 
-.moment h3, .moment p {
+.moment h3,
+.moment p {
   margin-bottom: 1em;
 }
 
@@ -35,7 +38,7 @@
   font-style: italic;
 }
 
-a{
+a {
   color: #dec129;
   padding: 0.3em 0.6em;
 }
@@ -49,10 +52,11 @@ a:hover {
   width: 100%;
 }
 
-.search-container form{
+.search-container form {
   width: 30%;
   position: relative;
 }
+
 .search-container fa-icon {
   position: absolute;
   top: 8px;
@@ -61,6 +65,7 @@ a:hover {
 
 .search-container input {
   padding: 0.5em;
+  margin: 0 auto;
   width: 100%;
   text-align: center;
 }

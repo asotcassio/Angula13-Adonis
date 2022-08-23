@@ -1,46 +1,52 @@
-import { HttpClientModule } from '@angular/common/http';
-import { Moment } from './../../../Moment';
 import { Component, OnInit } from '@angular/core';
-import { MomentService } from 'src/app/services/moment.service';
-import { MessagesService } from 'src/app/services/messages.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { MomentService } from 'src/app/services/moment/moment.service';
+
 import { Router } from '@angular/router';
 
+import { MessagesService } from 'src/app/services/messages/messages.service';
+import { Moment } from 'src/app/Moment';
 
 @Component({
   selector: 'app-new-moment',
   templateUrl: './new-moment.component.html',
-  styleUrls: ['./new-moment.component.css']
+  styleUrls: ['./new-moment.component.css'],
 })
 export class NewMomentComponent implements OnInit {
-  btnText = 'Compartilhar !';
+  btnText: string = 'Compartilhar!';
+  image?: File;
 
-  constructor(private momentService: MomentService , private messagesService: MessagesService , private router:Router) { }
+  constructor(
+    private momentService: MomentService,
+    private router: Router,
+    private messagesService: MessagesService
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+
+    this.image = file;
   }
 
-async  createHandler(moment:Moment){
-    const formData = new FormData()
+  buildForm() {}
 
-    formData.append('title',moment.title)
-    formData.append('description', moment.description)
+  async createHandler(moment: Moment) {
+    const formData = new FormData();
+
+    formData.append('title', moment.title);
+    formData.append('description', moment.description);
 
     if (moment.image) {
-     formData.append('image', moment.image)
+      formData.append('image', moment.image);
     }
 
-      await this.momentService.createMoment(formData).subscribe()
+    await this.momentService.createMoment(formData).subscribe();
 
-      this.messagesService.add("Momento adicionado com sucesso");//exibir o informativo da acao createMoment
+    this.messagesService.add(`Momento adicionado com sucesso!`);
 
-      // enviar para o service
-
-      //exibir msg
-
-      //redirect
-
-      this.router.navigate(['/'])
-
+    this.router.navigate(['/']);
   }
-
 }

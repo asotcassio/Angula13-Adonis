@@ -11,7 +11,9 @@ describe('MomentFormComponent', () => {
       declarations: [ MomentFormComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(MomentFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

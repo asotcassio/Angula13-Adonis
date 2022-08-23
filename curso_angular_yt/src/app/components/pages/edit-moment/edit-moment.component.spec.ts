@@ -11,7 +11,9 @@ describe('EditMomentComponent', () => {
       declarations: [ EditMomentComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(EditMomentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
